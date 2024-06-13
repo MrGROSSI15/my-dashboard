@@ -3,6 +3,7 @@ import { provideRouter, withViewTransitions } from '@angular/router';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 import { routes } from './app.routes';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -17,7 +18,7 @@ export const appConfig: ApplicationConfig = {
     ),
 
     // importProvidersFrom(
-      provideHttpClient(withInterceptorsFromDi()),
+      provideHttpClient(withInterceptorsFromDi()), provideAnimationsAsync(),
     // )
 
   ]
